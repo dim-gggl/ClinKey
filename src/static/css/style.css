@@ -10,19 +10,28 @@
     --hover-bg-color: rgba(255, 255, 255, 0.05);
     --border-color: rgba(255, 255, 255, 0.1);
     --backdrop-bg: rgba(16, 16, 16, 0.5);
-}
+    --box-shadow: none;
+    --app-background: linear-gradient(190deg,#131313 0%, #0d0d0d 70%, #030303 100%);
+
 
 body[data-theme="light"] {
     /* Light theme */
-    --bg-color: #f5f5f5;
+    /* --bg-color: #f5f5f5;
     --surface-color: #ffffff;
-    --text-color: #505050;
+    --text-color: #505050; */
+    --bg-color: #d5d5d5;
+    --surface-color: #bbb;
+    --text-color: #535353;
     --text-color-strong: #050505;
-    --subtle-text-color: #868686;
+    /* --subtle-text-color: #868686; */
+    --subtle-text-color: #484848;
     --accent-color: #007BFF;
     --hover-bg-color: rgba(0, 0, 0, 0.05);
     --border-color: rgba(0, 0, 0, 0.1);
     --backdrop-bg: rgba(255, 255, 255, 0.5);
+    --box-shadow: inset 3px -7px 8px 2px #00000040, -3px 7px 10px 4px #00000040;
+    --app-background: linear-gradient(210deg,rgb(255, 255, 255) 0%, rgba(191, 191, 191, 0.65) 88%, rgba(198, 198, 198, 0.69) 100%);
+
 }
 
 /* --- Reset and Base --- */
@@ -56,14 +65,16 @@ body {
 .app-container {
     width: 100%;
     max-width: 480px;
-    background-color: transparent;
+    background: var(--app-background);
     border: 1px solid var(--border-color);
     border-radius: 16px;
     overflow: hidden;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    background-color: var(--backdrop-bg);
+    /* background-color: var(--backdrop-bg); */
     transition: border-color 0.3s ease, background-color 0.3s ease;
+    box-shadow: var(--box-shadow);
+
 }
 
 .app-content {
@@ -198,6 +209,8 @@ body {
     font-size: 0.9rem;
     color: var(--text-color);
     transition: color 0.3s ease;
+    font-weight: 100 !important;
+    text-transform: lowercase;
 }
 
 .radio-label-desc { display: none; }
@@ -205,7 +218,8 @@ input[type="radio"] { display: none; }
 
 input[type="radio"]:checked + .radio-label .radio-label-title {
       color: var(--text-color-strong);
-      font-weight: 500;
+      font-weight: 700 !important;
+      text-transform: uppercase;
 }
 
 /* --- Advanced Options --- */
